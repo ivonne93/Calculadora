@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #a991df;
+}
+
+#calculator {
+    background-color: #575757;
+    max-width: 500px;
+    margin: 50px auto;
+    /*auto se centran*/
+    padding: 30px 30px 0 30px;
+    border-radius: 10px;
+    box-shadow: 15px 15px 0px #424242;
+}
+
+/*para darle dimension le ponemos after y before*/
+#calculator::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 8px;
+    background-color: #424242;
+    transform: rotate(45deg);
+    margin-left: -29px;
+    margin-top: -2px;
+    z-index: -1;
+    /*-1 quede al fondo*/
+}
+
+#calculator::before {
+    content: '';
+    position: absolute;
+    margin-left: 458px;
+    margin-top: -22px;
+    width: 25px;
+    height: 8px;
+    background-color: #424242;
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+/*operandos*/
+#calculator>.operands {
+    /*Se utiliza para seleccionar elementos que son hijos directos de un elemento específico.*/
+    width: 100%;
+    padding: 20px;
+    text-align: right;
+    background-color: #bcd1c0;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-size: 70px;
+}
+
+#calculator>.operands>[data-operand-1] {
+    font-size: 40px;
+}
+
+#calculator>#btn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+/*botn uno*/
+#calculator>#btn-grid>button {
+    padding: 10px;
+    background-color: #ececec;
+    font-weight: bold;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: #c9c9c9;
+    font-size: 25px;
+}
+
+/*boton 2 la flecha de retoseso <-*/
+#calculator>#btn-grid>button:nth-child(2) {
+    grid-column: span 2;
+}
+
+/*el ultimo hijo que es el =*/
+#calculator>#btn-grid>button:last-child {
+    grid-column: span 2;
+    background-color: #f5a34d;
+    border-color: #ce812a;
+}
+
+#copy {
+    font-size: 12px;
+    padding: 10px;
+    color: #ccc;
+    text-align: center;
+}
+
+#copy a {
+    color: #ccc;
+    text-decoration: none;
+}
